@@ -22,6 +22,10 @@ class project::jenkins {
     }
 
     project::jenkins::plugin {
+        "github": ;
+    }
+
+    project::jenkins::plugin {
         "phing" : ;
     }
 
