@@ -29,9 +29,7 @@ class project::jenkins {
         "phing" : ;
     }
 
-    project::jenkins::plugin {
-        "subversion" : ;
-    }
+    # Required for Jenkins-PHP
 
     project::jenkins::plugin {
         "checkstyle" : ;
@@ -39,6 +37,10 @@ class project::jenkins {
 
     project::jenkins::plugin {
         "cloverphp" : ;
+    }
+
+    project::jenkins::plugin {
+        "crap4j" : ;
     }
 
     project::jenkins::plugin {
