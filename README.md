@@ -4,13 +4,13 @@
 
 A out of the box solution for a Jenkins-CI setup, the server is installed with the following packages:
 
-- Ubuntu 13.04 "Raring Ringtail"
+- Debian 7.5 X64
 - Apache2
 - PHP 5.4.9 
 - Pear
 - Phing
+- Composer
 - MySQL
-- SQLite 3
 - Subversion & Git
 
 ## Jenkins ##
@@ -32,22 +32,24 @@ Installed plugins:
 - Violations (for processing various logfiles)
 - xUnit (for processing PHPUnit logfiles in JUnit format)
 
-To properly use the plugins QA tools are installed aswell [http://pear.phpqatools.org/](http://pear.phpqatools.org/)
+To properly use the plugins PHP-QA tools are installed aswell using Composer [https://github.com/h4cc/phpqatools](https://github.com/h4cc/phpqatools)
 
 ## Requirements ##
 
-- Vagrant (tested with 1.2.7)
+- Vagrant (tested with 1.6.5)
 
 ## Installation ##
 
-- git clone https://github.com/marcojanssen/vagrant-puppet-jenkins.git
+- git clone https://github.com/HMAZonderland/vagrant-puppet-jenkins.git
 - git submodule init
 - git submodule update
 - vagrant up
 
 Change the IP adres to whatever you want in the Vagrantfile, and add that IP adres to your host file, for example:
 
-> 192.168.2.200 ci
+> 192.168.56.200 ci
+
+The public network will be connected to an interface of your choosing
 
 Jenkins can be accessed from port 8080, http://ci:8080
 
@@ -57,7 +59,7 @@ There are some issues with Ubuntu Raring ringtail and Vagrant:
 
 The steps you should follow are:
 
-Check if you have Vagrant 1.2.7
+Check if you have Vagrant 1.6.5
 ``` bash
 vagrant --version
 ```
@@ -90,3 +92,6 @@ successfully
 ........
 notice: Finished catalog run in 52.42 seconds
 ```
+
+## Credits
+Credits go to marcojansen for the original setup: [https://github.com/marcojanssen/vagrant-puppet-jenkins](https://github.com/marcojanssen/vagrant-puppet-jenkins)
