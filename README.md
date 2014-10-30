@@ -55,7 +55,7 @@ Jenkins can be accessed from port 8080, http://ci:8080
 
 ## Troubleshooting
 
-There are some issues with Ubuntu Raring ringtail and Vagrant:
+There are some issues with Debian 7.5 and Vagrant:
 
 The steps you should follow are:
 
