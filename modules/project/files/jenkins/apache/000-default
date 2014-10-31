@@ -1,9 +1,9 @@
 NameVirtualHost *:80
 
 <VirtualHost *:80>
-        ServerAdmin webmaster@localhost
+        ServerAdmin jorik@webiq.nl
+        ServerName jiq001.webiq.nl
 
-        ServerName ci.simgroep.local
         ProxyPass / http://localhost:8080/
         ProxyPassReverse / http://localhost:8080/
         ProxyPreserveHost On
@@ -23,4 +23,25 @@ NameVirtualHost *:80
         LogLevel warn
 
         CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+      ServerAdmin jorik@webiq.nl
+      ServerName jiq001.webiq.nl
+
+      SSLEngine On
+      SSLCertificateFile    /etc/apache2/ssl/crt/jenkins.crt
+      SSLCertificateKeyFile /etc/apache2/ssl/key/jenkins.key
+
+      ProxyRequests     Off
+      ProxyPass         /  http://localhost:8080/
+      ProxyPassReverse  /  http://localhost:8080/
+      ProxyPassReverse  /  http://jiq001.webiq.nl/
+
+      <Proxy http://localhost:8080/*>
+        Order allow,deny
+        Allow from all
+      </Proxy>
+      ProxyPreserveHost on
+
 </VirtualHost>

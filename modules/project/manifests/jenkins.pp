@@ -26,11 +26,35 @@ class project::jenkins {
     }
 
     project::jenkins::plugin {
+        "github-api": ;
+    }
+
+    project::jenkins::plugin {
+        "github-oauth": ;
+    }
+
+    project::jenkins::plugin {
+        "git-client": ;
+    }
+
+    project::jenkins::plugin {
         "phing" : ;
     }
 
     project::jenkins::plugin {
         "locale" : ;
+    }
+
+    project::jenkins::plugin {
+        "ws-cleanup" : ;
+    }
+
+    project::jenkins::plugin {
+        "embeddable-build-status" : ;
+    }
+
+    project::jenkins::plugin {
+        "multiple-scms": ;
     }
 
     # Required for Jenkins-PHP

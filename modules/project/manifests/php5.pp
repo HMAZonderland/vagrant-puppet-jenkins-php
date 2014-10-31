@@ -18,6 +18,7 @@ class project::php5 {
     php::module { "apc":
         module_prefix => "php-"
     }
+    php::module { "libssh2": }
 
     augeas { "php.ini":
         notify  => Service['apache2'],

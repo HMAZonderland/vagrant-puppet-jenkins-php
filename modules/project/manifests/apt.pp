@@ -4,8 +4,12 @@ class project::apt {
         command => "apt-get update"
     }
 
-    exec { "wget":
-        command => "apt-get install wget"
+    exec { "packages":
+        command => "apt-get install wget ant openssl libssh2-1"
+    }
+
+    exec { "ant":
+      command => "apt-get install ant"
     }
 
     exec { "jenkins-source":
