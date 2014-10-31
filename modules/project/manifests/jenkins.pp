@@ -29,8 +29,11 @@ class project::jenkins {
         "phing" : ;
     }
 
-    # Required for Jenkins-PHP
+    project::jenkins::plugin {
+        "locale" : ;
+    }
 
+    # Required for Jenkins-PHP
     project::jenkins::plugin {
         "checkstyle" : ;
     }
