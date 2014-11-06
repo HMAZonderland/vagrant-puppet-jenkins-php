@@ -10,4 +10,9 @@ class project::composer {
         command => "sudo /usr/local/bin/composer global require 'h4cc/phpqatools'",
         require => Exec['composer-install']
     }
+
+    exec {'composer-set-global':
+        command => "export PATH=~/.composer/vendor/bin:$PATH",
+        require => Exec['composer-qatools']
+    }
 }
