@@ -6,7 +6,6 @@ class project::php5 {
     }
 
     php::module { "common": }
-
     php::module { "cli": }
     php::module { "intl": }
     php::module { "imagick": }
@@ -19,6 +18,7 @@ class project::php5 {
         module_prefix => "php-"
     }
     php::module { "libssh2": }
+    php::module { "xsl": }
 
     augeas { "php.ini":
         notify  => Service['apache2'],
