@@ -5,11 +5,7 @@ class project::apt {
     }
 
     exec { "packages":
-        command => "apt-get install wget ant openssl libssh2-1"
-    }
-
-    exec { "ant":
-      command => "apt-get install ant"
+        command => "apt-get install wget ant openssl libssh2-1 -y"
     }
 
     exec { "jenkins-source":
